@@ -758,7 +758,7 @@ His business data: ${buildCtx()}`;
     const res=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',
       headers:{'Content-Type':'application/json','x-api-key':S.apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,system:mode==='biz'?bizSys:coachSys,messages:msgs})
+      body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:600,system:mode==='biz'?bizSys:coachSys,messages:msgs})
     });
     const data=await res.json();
     if(data.error)return'Error: '+data.error.message;
